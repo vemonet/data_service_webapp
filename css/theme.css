@@ -16,3 +16,44 @@ body {
 .theme-showcase .navbar .container {
   width: auto;
 }
+
+/* Change navbar color (bootstrap-theme.css) */
+
+.navbar-inverse {
+  background-image: linear-gradient(to bottom, #E3182C 0%, #EC940C 100%);
+  border-color: #EC940C; /* Modifie la couleur de la bordure sous la navbar */
+}
+.navbar-inverse .navbar-nav > .active > a {
+  background-image:         linear-gradient(to bottom, #EC940C 0%, #E3182C 100%);
+}
+
+
+/* Change "Data Services" and list text color (bootstrap.css) */
+
+.navbar-inverse .navbar-brand {
+  color: #FFFFFF;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFFFFF;
+}
+
+
+/* Change "Data Services" and list text color when hover (bootstrap.css) */
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #9d9d9d;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #9d9d9d;
+  background-color: transparent;
+}
+
+/* Change Jumbotron style (bootstrap.css) for p and li */
+
+.jumbotron p, .jumbotron li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 200;
+}
