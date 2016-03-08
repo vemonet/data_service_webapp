@@ -39,6 +39,34 @@ $nav-color-light: #0080FF;
 ```
 
 
+## Using AngularJS
+
+* To call the getAnnotation() method from the serviceController (in js/data_service.js)
+
+```html
+<div ng-controller="serviceController">
+  <form ng-submit="getAnnotation()">
+    <input type="text" ng-model="textToAnnotate" size="30" placeholder="Text to annotate">
+  </form>
+</div>
+```
+
+* Creating the controller and method in the JavaScript (see js/data_service.js for more details)
+
+```javascript
+data_service_webapp.controller('serviceController', function($scope, dataService) {    
+  // function that build the url and calls the dataservice to get the annotations
+  $scope.getAnnotation = function() {
+    $scope.request_url = build_annotation_url($scope.textToAnnotate);
+    // calls the dataservice to get the annotations
+    dataService.getData($scope.request_url).then(function(dataResponse) {
+      $scope.data = dataResponse.data;
+    });
+  };
+});
+```
+
+
 
 ## Changing CSS
 

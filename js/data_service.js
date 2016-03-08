@@ -37,10 +37,11 @@ function build_annotation_url(textToAnnotate, checkScore, wholeWord) {
 
 // the controller called in the html by the form 
 data_service_webapp.controller('serviceController', function($scope, dataService) {    
-  // function that calls the dataservice to get the annotations
+  // function that build the url and calls the dataservice to get the annotations
   $scope.getAnnotation = function() {
     $scope.request_url = build_annotation_url($scope.textToAnnotate, $scope.checkScore, $scope.wholeWord);
     //console.log($scope.request_url);
+    // calls the dataservice to get the annotations
     dataService.getData($scope.request_url).then(function(dataResponse) {
       $scope.data = dataResponse.data;
     });
