@@ -1,6 +1,10 @@
 :root {
-  --color-light-green: #009900;
-  --color-deep-green: #336600;
+  /*
+  --nav-color-light: #009900;
+  --nav-color-deep: #336600;
+  */
+  --nav-color-light: #0080FF;
+  --nav-color-deep: #1273B7;
 }
 
 body {
@@ -25,15 +29,15 @@ body {
 /* Change navbar color (bootstrap-theme.css) */
 
 .navbar-inverse {
-  background-image: linear-gradient(to bottom, var(--color-deep-green) 0%, var(--color-light-green) 100%);
-  border-color: var(--color-light-green); /* Modifie la couleur de la bordure sous la navbar */
+  background-image: linear-gradient(to bottom, var(--nav-color-deep) 0%, var(--nav-color-light) 100%);
+  border-color: var(--nav-color-light); /* Modifie la couleur de la bordure sous la navbar */
 }
 .navbar-inverse .navbar-nav > .active > a {
-  background-image:         linear-gradient(to bottom, var(--color-light-green) 0%, var(--color-deep-green) 100%);
+  background-image:         linear-gradient(to bottom, var(--nav-color-light) 0%, var(--nav-color-deep) 100%);
 }
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .active > a {
-  background-image:         linear-gradient(to bottom, var(--color-light-green) 0%, var(--color-deep-green) 100%);
+  background-image:         linear-gradient(to bottom, var(--nav-color-light) 0%, var(--nav-color-deep) 100%);
 }
 
 
@@ -78,4 +82,10 @@ body {
 
 footer {
   padding-top: 2cm;
+}
+
+/* Change hr (horizontal separator) width */
+
+hr {
+  width: 50%;
 }
