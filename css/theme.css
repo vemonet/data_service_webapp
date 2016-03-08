@@ -49,11 +49,25 @@ body {
   color: #9d9d9d;
   background-color: transparent;
 }
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .active > a {
+  background-image:         linear-gradient(to bottom, #E3182C 0%, #EC940C 100%);
+}
 
-/* Change Jumbotron style (bootstrap.css) for p and li */
+/* Change Jumbotron style (bootstrap.css) for h1, p and li */
 
+.jumbotron h1,
+.jumbotron .h1 {
+  font-size: 35px;
+}
 .jumbotron p, .jumbotron li {
   margin-bottom: 15px;
   font-size: 16px;
   font-weight: 200;
+}
+
+/* Set a padding to the footer */
+
+footer {
+  padding-top: 2cm;
 }
