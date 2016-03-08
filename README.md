@@ -1,0 +1,114 @@
+# Service Request App
+
+A simple app to request REST API web services using Bootstrap and AngularJS
+
+
+## Changer la couleur de la navbar
+
+* Changer la couleur du gradient de la navbar
+Dans bootstrap-theme.css	
+
+```css
+.navbar-inverse {
+  background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+  background-image:      -o-linear-gradient(top, #3c3c3c 0%, #222 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));
+  background-image:         linear-gradient(to bottom, #E3182C 0%, #EC940C 100%);  /* Gradient entre ces 2 couleurs */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-radius: 4px;
+}
+```
+
+* Changer la couleur de l'onglet sélectionné
+Dans bootstrap-theme.css
+
+```css
+.navbar-inverse .navbar-nav > .active > a {
+  background-image: -webkit-linear-gradient(top, #080808 0%, #0f0f0f 100%);
+  background-image:      -o-linear-gradient(top, #080808 0%, #0f0f0f 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#080808), to(#0f0f0f));
+  background-image:         linear-gradient(to bottom, #E3182C 0%, #EC940C 100%);   /* Ici */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff080808', endColorstr='#ff0f0f0f', GradientType=0);
+  background-repeat: repeat-x;
+  -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, .25);
+          box-shadow: inset 0 3px 9px rgba(0, 0, 0, .25);
+}
+```
+
+* Changer la couleur de la bordure sous la navbar
+Dans bootstrap.css
+
+```css
+.navbar-inverse {
+  background-color: #0080FF;
+  border-color: #080808;  /* Modifie la couleur de la bordure sous la navbar */
+}
+```
+
+* Changer la couleur du texte "Data Services"
+Dans bootstrap.css
+
+```css
+.navbar-inverse .navbar-brand {
+  color: #9d9d9d;
+}
+```
+
+* Changer la couleur du texte de la liste dans la navbar
+Dans bootstrap.css
+
+```css
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFFFFF;
+}
+```
+
+* Changer la couleur des textes de la navbar quand on passe dessus
+Dans bootstrap.css
+
+```css
+/* Pour la liste */
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #9d9d9d;
+  background-color: transparent;
+}
+
+/* Pour "Data Services" */
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #9d9d9d;
+  background-color: transparent;
+}
+```
+
+## Change Jumbotron style
+In bootstrap.css
+
+```css
+.jumbotron p, .jumbotron li {  /* Just add ", .jumbotron li" here */
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 200;
+}
+```
+
+## Simple login with MySQL and PHP
+
+https://www.scirra.com/tutorials/525/simple-login-using-a-mysql-database
+
+http://www.webgeekly.com/tutorials/php/how-to-make-a-login-system-with-php/
+
+Serveur apache2 pour execute le PHP:
+/var/www/html
+
+
+## Couleur du logo du LIRMM
+
+* Bleu
+1273B7
+* Orange
+EC940C
+* Rouge
+E3182C

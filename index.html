@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="data_service_app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <meta name="author" content="vincent.emonet@protonmail.com">
+    <meta name="description" content="An app to request data services">
+    <meta name="keywords" content="data, services, text mining, textmining, annotation">
+
+    <link rel="icon" type="image/x-icon" href="public/images/logo_lirmm.ico" />
+
+    <title>Data Service App</title>
+
+    <!-- Bootstrap core CSS and theme -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+    
+    <!-- JavaScript imports can be placed at the end of the document so the pages load faster, but that can cause display bug at load -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/data_service.js"></script>
+
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Data Services</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Text annotation</a></li>
+                <li><a href="#">Text processing</a></li>
+              </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mailto:vincent.emonet@lirmm.fr">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Data Service App</h1>
+        <p>Services to use REST API services.</p>
+        <p>At the moment 2 services are available:</p>
+        <ul>
+          <li>Text annotation</li>
+          <li>Text processing</li>
+        </ul>
+      </div>
+
+      <div class="page-header">
+        <h1>Text annotation</h1>
+      </div>
+      <!-- Use Chrome with Allow-Control-Allow-Origin: * -->
+      
+      <!--
+      <input type="text" id="to_annotate" value="leaf" placeholder="some text" class="search" onkeydown="loadDoc()"><br>
+      onkeydown permet de lancer une function à chaque fois qu'une touche est appuyée (très dynamique) 
+      Et on keyup lance la function quand on tape n'importe quelle touche du clavier
+      
+      <input type="text" id="to_annotate" value="leaf" placeholder="some text" class="search" onkeyup="loadDoc()"><br/>
+      
+      <button type="button" style="margin-top: 1cm;" class="btn btn-lg btn-primary" onclick="loadDoc()">Get annotations</button>
+      -->
+      
+      <!-- The controller to get the annotations. See js/annotation.js -->
+      <div ng-controller="serviceController" ng-init="wholeWord=true;checkScore=true;textToAnnotate='cancer'">
+        <form ng-submit="getAnnotation()">
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="checkScore">Score</label>
+            <br/>
+            <label><input type="checkbox" ng-model="wholeWord">Whole word only</label>
+          </div>
+          <input type="text" ng-model="textToAnnotate" size="30" placeholder="Text to annotate">
+          &nbsp;&nbsp;
+          <input type="submit" class="btn btn-primary" value="Annotate">
+        </form>
+      
+        <div ng-show="data.length">
+          <!-- Don't display the table if no data -->
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Annotated text</th>
+                <th>Concept</th>
+                <!--<th ng-show="checkScore">Score</th> -->
+                <th ng-show="checkScore">
+                  <span ng-click="reverseSort = !reverseSort">
+                  Score
+                  </span>
+                </th>
+                <!-- <th ng-show="data[0].score">Score</th> show score col only if score checked. 2 ways to do it -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Iterate over cls in the data retrieved from stageportal to display the annotated text and concept id
+                   And change order by clicking on the score table header -->
+              <tr ng-repeat="cls in data|orderBy:orderByField:reverseSort">
+                <td>{{cls.annotations[0].text}}</td>
+                <td>{{cls.annotatedClass['@id']}}</td>
+                <td ng-show="checkScore">{{cls.score}}</td>
+                <!-- <td ng-show="cls.score">{{cls.score}}</td> other wat to display score if checked -->
+              </tr>
+            </tbody>
+          </table>
+          <span>Reproduce those results: <a href="{{request_url}}" target="_blank">{{request_url}}</a></span>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <h1>Text processing</h1>
+      </div>
+      <h1>
+        <span class="label label-warning">In construction</span>
+      </h1>
+
+
+    </div> <!-- /container -->
+
+  </body>
+  <footer>
+    <hr>
+    <div style="text-align:center">
+      <a href="http://www.lirmm.fr/"><img src="public/images/logo_lirmm.png" width="60" height="60"></a>
+    </div>
+  </footer>
+</html>
