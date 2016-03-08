@@ -1,4 +1,8 @@
 /* SCSS file compiled into CSS by Sass */
+
+$nav-color-light: #0080FF;
+$nav-color-deep: #1273B7;
+
 /* Green
 $nav-color-light: #009900;
 $nav-color-deep: #336600;
@@ -7,70 +11,86 @@ $nav-color-deep: #336600;
 $nav-color-light: #0080FF;
 $nav-color-deep: #1273B7;
 */
+
 body {
   padding-top: 70px;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+}
 
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 .theme-showcase > p > .btn {
-  margin: 5px 0; }
+  margin: 5px 0;
+}
 
 .theme-showcase .navbar .container {
-  width: auto; }
+  width: auto;
+}
 
 /* Change navbar color (bootstrap-theme.css) */
+
 .navbar-inverse {
-  background-image: linear-gradient(to bottom, #1273B7 0%, #0080FF 100%);
-  border-color: #0080FF;
-  /* Modifie la couleur de la bordure sous la navbar */ }
-
+  background-image: linear-gradient(to bottom, $nav-color-deep 0%, $nav-color-light 100%);
+  border-color: $nav-color-light; /* Modifie la couleur de la bordure sous la navbar */
+}
 .navbar-inverse .navbar-nav > .active > a {
-  background-image: linear-gradient(to bottom, #0080FF 0%, #1273B7 100%); }
-
+  background-image:         linear-gradient(to bottom, $nav-color-light 0%, $nav-color-deep 100%);
+}
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .active > a {
-  background-image: linear-gradient(to bottom, #0080FF 0%, #1273B7 100%); }
+  background-image:         linear-gradient(to bottom, $nav-color-light 0%, $nav-color-deep 100%);
+}
+
 
 /* Change "Data Services" and list text color (bootstrap.css) */
+
 .navbar-inverse .navbar-brand {
-  color: #FFFFFF; }
-
+  color: #FFFFFF;
+}
 .navbar-inverse .navbar-nav > li > a {
-  color: #FFFFFF; }
-
+  color: #FFFFFF;
+}
 .navbar-inverse .navbar-nav > li > a:hover {
-  color: #9d9d9d; }
+  color: #9d9d9d;
+}
+
 
 /* Change "Data Services" and list text color when hover (bootstrap.css) */
+
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
   color: #9d9d9d;
-  background-color: transparent; }
-
+  background-color: transparent;
+}
 .navbar-inverse .navbar-nav > li > a:focus {
   color: #9d9d9d;
-  background-color: transparent; }
+  background-color: transparent;
+}
 
 /* Change Jumbotron style (bootstrap.css) for h1, p and li */
+
 .jumbotron h1,
 .jumbotron .h1 {
-  font-size: 35px; }
-
+  font-size: 35px;
+}
 .jumbotron p, .jumbotron li {
   margin-bottom: 15px;
   font-size: 16px;
-  font-weight: 200; }
+  font-weight: 200;
+}
 
 /* Set a padding to the footer */
+
 footer {
-  padding-top: 2cm; }
+  padding-top: 2cm;
+}
 
 /* Change hr (horizontal separator) width */
-hr {
-  width: 50%; }
 
-/*# sourceMappingURL=theme.css.map */
+hr {
+  width: 50%;
+}

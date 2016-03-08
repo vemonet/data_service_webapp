@@ -2,6 +2,39 @@
 
 A simple app to request REST API web services using Bootstrap and AngularJS
 
+## Using Sass to precompile the CSS
+
+* Install Sass
+```
+gem install sass
+```
+
+* Convert scss to css (basically juste changing variables)
+
+```
+sass scss/theme.scss css/theme.css
+```
+
+* Tell Sass to watch the file and **update the CSS every time the Sass file changes**
+
+```
+sass --watch scss/theme.scss:css/theme.css
+
+# Watch whole directory
+sass --watch scss:css
+```
+
+* How to use variable
+
+```css
+$nav-color-light: #0080FF;
+
+.navbar-inverse {
+  border-color: $nav-color-light;
+}
+```
+
+
 
 ## Changing CSS
 
