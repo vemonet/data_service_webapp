@@ -4,6 +4,10 @@ A simple app to request REST API web services using Bootstrap and AngularJS
 
 ## Using Sass to precompile the CSS
 
+Use `css/themes.scss` then compile it to `css/themes.css` to change the CSS
+It will resolve all variable used in the SCSS. You can also directly change the themes.css, but it will be override if themes.scss is compiled into themes.css
+
+
 * Install Sass
 ```
 gem install sass
