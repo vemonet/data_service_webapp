@@ -17,10 +17,10 @@ data_service_webapp.service('dataService', function($http) {
 
 // Function that takes build the URL to get the annotations according to the paramaters (score, whole word only)
 function build_annotation_url(textToAnnotate, checkScore, wholeWord) {
-  //var request_url = "http://services.stageportal.lirmm.fr/annotator/?longest_only=false&exclude_numbers=false&exclude_synonyms=false&apikey=541749f2-9060-425c-8083-a6b55d0d9fa6&text=" + textToAnnotate;
+  var request_url = "http://services.stageportal.lirmm.fr/annotator/?longest_only=false&exclude_numbers=false&exclude_synonyms=false&apikey=541749f2-9060-425c-8083-a6b55d0d9fa6&text=" + textToAnnotate;
   
-  var request_url = "http://data.stageportal.lirmm.fr/annotator/?longest_only=false&exclude_numbers=false&exclude_synonyms=false&text=" + textToAnnotate;
-  // Attention, ne marche pas avec services.stageportal car il ne récupère pas les headers
+  //var request_url = "http://data.stageportal.lirmm.fr/annotator/?longest_only=false&exclude_numbers=false&exclude_synonyms=false&text=" + textToAnnotate;
+  // Attention, ne marche pas avec services.stageportal car il ne récupère pas les headers. Il faut donc préciser l'api key dans l'URL
   
   // Ask for score if score checkbox on true
   if (checkScore) {
