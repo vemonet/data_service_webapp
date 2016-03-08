@@ -1,6 +1,6 @@
 # Service Request App
 
-A simple app to request REST API web services using Bootstrap and AngularJS
+A simple app to request REST API web services using Bootstrap 3.3.6 and AngularJS 1.5.0
 
 ## Using Sass to precompile the CSS
 
