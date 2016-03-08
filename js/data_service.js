@@ -1,6 +1,6 @@
-var data_service_app = angular.module('data_service_app',[]);
+var data_service_webapp = angular.module('data_service_webapp',[]);
 
-data_service_app.service('dataService', function($http) {
+data_service_webapp.service('dataService', function($http) {
   //delete $http.defaults.headers.common['X-Requested-With'];
   this.getData = function(request_url) {
     // $http() returns a $promise that we can add handlers with .then()
@@ -36,7 +36,7 @@ function build_annotation_url(textToAnnotate, checkScore, wholeWord) {
 }
 
 // the controller called in the html by the form 
-data_service_app.controller('serviceController', function($scope, dataService) {    
+data_service_webapp.controller('serviceController', function($scope, dataService) {    
   // function that calls the dataservice to get the annotations
   $scope.getAnnotation = function() {
     $scope.request_url = build_annotation_url($scope.textToAnnotate, $scope.checkScore, $scope.wholeWord);

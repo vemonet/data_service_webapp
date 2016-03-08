@@ -94,15 +94,6 @@ In bootstrap.css
 }
 ```
 
-## Simple login with MySQL and PHP
-
-https://www.scirra.com/tutorials/525/simple-login-using-a-mysql-database
-
-http://www.webgeekly.com/tutorials/php/how-to-make-a-login-system-with-php/
-
-Serveur apache2 pour execute le PHP:
-/var/www/html
-
 
 ## Couleur du logo du LIRMM
 
