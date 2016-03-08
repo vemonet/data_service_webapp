@@ -3,7 +3,9 @@
 A simple app to request REST API web services using Bootstrap and AngularJS
 
 
-## Changer la couleur de la navbar
+## Changing CSS
+
+Use css/themes.css to change the CSS
 
 * Changer la couleur du gradient de la navbar
 Dans bootstrap-theme.css	
