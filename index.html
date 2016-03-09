@@ -35,6 +35,13 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
+          <!-- Menu for mobile devices -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="index.html">Data Services</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -66,10 +73,59 @@
           <li>Text processing</li>
         </ul>
       </div>
+      
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">Text annotation</h1>
+        </div>
+        <div class="panel-body">
+          <!-- The controller to get the annotations. See js/annotation.js -->
+          <div ng-controller="serviceController" ng-init="wholeWord=true;checkScore=true;textToAnnotate='cancer'">
+            <form ng-submit="getAnnotation()">
+              <div class="checkbox">
+                <label><input type="checkbox" ng-model="checkScore">Score</label>
+                <br/>
+                <label><input type="checkbox" ng-model="wholeWord">Whole word only</label>
+              </div>
+              <input type="text" ng-model="textToAnnotate" size="30" placeholder="Text to annotate">
+              &nbsp;&nbsp;
+              <!-- <input type="submit" class="btn btn-success" value="Annotate"> <!-- green button -->
+              <input type="submit" class="btn btn-primary" value="Annotate"> <!-- blue button -->
+            </form>
 
-      <div class="page-header">
-        <h1>Text annotation</h1>
+            <div ng-show="data.length">
+              <!-- Don't display the table if no data -->
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Annotated text</th>
+                    <th>Concept</th>
+                    <!--<th ng-show="checkScore">Score</th> -->
+                    <th ng-show="checkScore">
+                      <span ng-click="reverseSort = !reverseSort">
+                      Score
+                      </span>
+                    </th>
+                    <!-- <th ng-show="data[0].score">Score</th> show score col only if score checked. 2 ways to do it -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Iterate over cls in the data retrieved from stageportal to display the annotated text and concept id
+                       And change order by clicking on the score table header -->
+                  <tr ng-repeat="cls in data|orderBy:orderByField:reverseSort">
+                    <td>{{cls.annotations[0].text}}</td>
+                    <td>{{cls.annotatedClass['@id']}}</td>
+                    <td ng-show="checkScore">{{cls.score}}</td>
+                    <!-- <td ng-show="cls.score">{{cls.score}}</td> other wat to display score if checked -->
+                  </tr>
+                </tbody>
+              </table>
+              <span>Reproduce those results: <a href="{{request_url}}" target="_blank">{{request_url}}</a></span>
+            </div>
+          </div>
+        </div>
       </div>
+
       <!-- Use Chrome with Allow-Control-Allow-Origin: * -->
       
       <!--
@@ -81,51 +137,6 @@
       
       <button type="button" style="margin-top: 1cm;" class="btn btn-lg btn-primary" onclick="loadDoc()">Get annotations</button>
       -->
-      
-      <!-- The controller to get the annotations. See js/annotation.js -->
-      <div ng-controller="serviceController" ng-init="wholeWord=true;checkScore=true;textToAnnotate='cancer'">
-        <form ng-submit="getAnnotation()">
-          <div class="checkbox">
-            <label><input type="checkbox" ng-model="checkScore">Score</label>
-            <br/>
-            <label><input type="checkbox" ng-model="wholeWord">Whole word only</label>
-          </div>
-          <input type="text" ng-model="textToAnnotate" size="30" placeholder="Text to annotate">
-          &nbsp;&nbsp;
-          <!-- <input type="submit" class="btn btn-success" value="Annotate"> <!-- green button -->
-          <input type="submit" class="btn btn-primary" value="Annotate"> <!-- blue button -->
-        </form>
-      
-        <div ng-show="data.length">
-          <!-- Don't display the table if no data -->
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Annotated text</th>
-                <th>Concept</th>
-                <!--<th ng-show="checkScore">Score</th> -->
-                <th ng-show="checkScore">
-                  <span ng-click="reverseSort = !reverseSort">
-                  Score
-                  </span>
-                </th>
-                <!-- <th ng-show="data[0].score">Score</th> show score col only if score checked. 2 ways to do it -->
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Iterate over cls in the data retrieved from stageportal to display the annotated text and concept id
-                   And change order by clicking on the score table header -->
-              <tr ng-repeat="cls in data|orderBy:orderByField:reverseSort">
-                <td>{{cls.annotations[0].text}}</td>
-                <td>{{cls.annotatedClass['@id']}}</td>
-                <td ng-show="checkScore">{{cls.score}}</td>
-                <!-- <td ng-show="cls.score">{{cls.score}}</td> other wat to display score if checked -->
-              </tr>
-            </tbody>
-          </table>
-          <span>Reproduce those results: <a href="{{request_url}}" target="_blank">{{request_url}}</a></span>
-        </div>
-      </div>
 
       <div class="page-header">
         <h1>Text processing</h1>

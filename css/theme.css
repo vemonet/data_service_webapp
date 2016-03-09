@@ -73,4 +73,13 @@ footer {
 hr {
   width: 50%; }
 
+/* Change Panels CSS */
+.panel-title {
+  font-size: 30px;
+  color: inherit; }
+
+/* Add space at the top of table (e.g. annotation table) */
+.table {
+  margin-top: 10px; }
+
 /*# sourceMappingURL=theme.css.map */
