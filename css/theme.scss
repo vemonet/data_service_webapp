@@ -1,7 +1,7 @@
 /* SCSS file compiled into CSS by Sass */
 
-$nav-color-light: #0080FF;
-$nav-color-deep: #1273B7;
+$nav-color-light: #337ab7;
+$nav-color-deep: #2e6da4;
 
 /* Green
 $nav-color-light: #009900;
@@ -10,6 +10,10 @@ $nav-color-deep: #336600;
  * Blue
 $nav-color-light: #0080FF;
 $nav-color-deep: #1273B7;
+
+ * Bootstrap primary blue
+$nav-color-light: #2e6da4;
+$nav-color-deep: #337ab7;
 */
 
 body {
@@ -32,7 +36,6 @@ body {
 }
 
 /* Change navbar color (bootstrap-theme.css) */
-
 .navbar-inverse {
   background-image: linear-gradient(to bottom, $nav-color-deep 0%, $nav-color-light 100%);
   border-color: $nav-color-light; /* Modifie la couleur de la bordure sous la navbar */
@@ -47,7 +50,6 @@ body {
 
 
 /* Change "Data Services" and list text color (bootstrap.css) */
-
 .navbar-inverse .navbar-brand {
   color: #FFFFFF;
 }
@@ -60,7 +62,6 @@ body {
 
 
 /* Change "Data Services" and list text color when hover (bootstrap.css) */
-
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
   color: #9d9d9d;
@@ -72,7 +73,6 @@ body {
 }
 
 /* Change Jumbotron style (bootstrap.css) for h1, p and li */
-
 .jumbotron h1,
 .jumbotron .h1 {
   font-size: 35px;
@@ -84,22 +84,18 @@ body {
 }
 
 /* Set a padding to the footer */
-
 footer {
   padding-top: 2cm;
 }
 
 /* Change hr (horizontal separator) width */
-
 hr {
   width: 50%;
 }
 
-/* Change Panels CSS */
-
+/* Change Panels title font size */
 .panel-title {
     font-size: 30px;
-    color: inherit;
 }
 
 /* Add space at the top of table (e.g. annotation table) */

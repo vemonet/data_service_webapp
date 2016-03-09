@@ -6,6 +6,10 @@ $nav-color-deep: #336600;
  * Blue
 $nav-color-light: #0080FF;
 $nav-color-deep: #1273B7;
+
+ * Bootstrap primary blue
+$nav-color-light: #2e6da4;
+$nav-color-deep: #337ab7;
 */
 body {
   padding-top: 70px;
@@ -24,16 +28,16 @@ body {
 
 /* Change navbar color (bootstrap-theme.css) */
 .navbar-inverse {
-  background-image: linear-gradient(to bottom, #1273B7 0%, #0080FF 100%);
-  border-color: #0080FF;
+  background-image: linear-gradient(to bottom, #2e6da4 0%, #337ab7 100%);
+  border-color: #337ab7;
   /* Modifie la couleur de la bordure sous la navbar */ }
 
 .navbar-inverse .navbar-nav > .active > a {
-  background-image: linear-gradient(to bottom, #0080FF 0%, #1273B7 100%); }
+  background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%); }
 
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .active > a {
-  background-image: linear-gradient(to bottom, #0080FF 0%, #1273B7 100%); }
+  background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%); }
 
 /* Change "Data Services" and list text color (bootstrap.css) */
 .navbar-inverse .navbar-brand {
@@ -77,6 +81,10 @@ hr {
 .panel-title {
   font-size: 30px;
   color: inherit; }
+
+/* Change primary (blue) panel color */
+.panel-primary > .panel-heading {
+  background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%); }
 
 /* Add space at the top of table (e.g. annotation table) */
 .table {
